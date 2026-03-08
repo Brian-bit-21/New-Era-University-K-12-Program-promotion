@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Era University K–12 Program</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A2342', // Dark Blue
+                        secondary: '#F0F0F0', // Light Gray
+                        accent: '#FFD700', // Gold
+                        'text-dark': '#333333' // Darker text for readability
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content.hidden {
+            display: none;
+        }
+        /* Custom scrollbar for better aesthetics, optional */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="font-sans text-text-dark bg-white">
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="py-4 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-primary hover:text-accent">NEU K–12</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#hero" class="text-lg font-medium text-primary hover:text-accent transition-colors duration-200">Home</a>
+                <a href="#about" class="text-lg font-medium text-primary hover:text-accent transition-colors duration-200">About the Program</a>
+                <a href="#academic-levels" class="text-lg font-medium text-primary hover:text-accent transition-colors duration-200">Academic Levels</a>
+                <a href="#programs-curriculum" class="text-lg font-medium text-primary hover:text-accent transition-colors duration-200">Programs & Curriculum</a>
+                <a href="#student-opportunities" class="text-lg font-medium text-primary hover:text-accent transition-colors duration-200">Student Opportunities</a>
+                <a href="#admissions" class="text-lg font-medium text-primary hover:text-accent transition-colors duration-200">Admissions</a>
+                <a href="#contact" class="text-lg font-medium text-primary hover:text-accent transition-colors duration-200">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-primary focus:outline-none" aria-label="Toggle mobile menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2">
+            <a href="#hero" class="block px-4 py-2 text-primary hover:bg-secondary transition-colors duration-200">Home</a>
+            <a href="#about" class="block px-4 py-2 text-primary hover:bg-secondary transition-colors duration-200">About the Program</a>
+            <a href="#academic-levels" class="block px-4 py-2 text-primary hover:bg-secondary transition-colors duration-200">Academic Levels</a>
+            <a href="#programs-curriculum" class="block px-4 py-2 text-primary hover:bg-secondary transition-colors duration-200">Programs & Curriculum</a>
+            <a href="#student-opportunities" class="block px-4 py-2 text-primary hover:bg-secondary transition-colors duration-200">Student Opportunities</a>
+            <a href="#admissions" class="block px-4 py-2 text-primary hover:bg-secondary transition-colors duration-200">Admissions</a>
+            <a href="#contact" class="block px-4 py-2 text-primary hover:bg-secondary transition-colors duration-200">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen bg-primary text-white flex items-center justify-center text-center py-20">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+                New Era University K–12 Program
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-accent mb-8">
+                Building Character, Knowledge, and Leadership for the Future.
+            </h2>
+            <p class="text-lg md:text-xl leading-relaxed mb-10">
+                The K–12 Program of New Era University is committed to providing quality education that develops students academically, morally, and socially. The program prepares learners with the knowledge and skills necessary for higher education and future careers.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#about" class="btn-primary bg-accent text-primary hover:bg-yellow-400 py-3 px-8 rounded-full text-lg font-bold transition-all duration-300 shadow-lg">Learn More</a>
+                <a href="#programs-curriculum" class="btn-secondary border-2 border-accent text-accent hover:bg-accent hover:text-primary py-3 px-8 rounded-full text-lg font-bold transition-all duration-300 shadow-lg">Explore Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Program Section -->
+    <section id="about" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-primary text-center mb-12">About Our Program</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Our Mission</h4>
+                    <p class="text-lg leading-relaxed">To provide a holistic and values-driven education that fosters academic excellence, moral integrity, and social responsibility among our K–12 students.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Our Vision</h4>
+                    <p class="text-lg leading-relaxed">To be a leading K–12 educational institution, nurturing future leaders who are academically competent, ethically upright, and globally aware.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Educational Philosophy</h4>
+                    <p class="text-lg leading-relaxed">We believe in a student-centered approach, promoting critical thinking, creativity, and a lifelong love for learning within a supportive and challenging environment.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 lg:col-span-2 lg:col-start-2">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Commitment to Student Development</h4>
+                    <p class="text-lg leading-relaxed">Our program is dedicated to the holistic growth of every student, focusing on academic excellence, character formation, leadership skills, and community engagement to prepare them for success in higher education and beyond.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Levels Section -->
+    <section id="academic-levels" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-primary text-center mb-12">Academic Levels</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-secondary p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Kindergarten</h4>
+                    <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+                        <li>Early childhood development focus</li>
+                        <li>Basic literacy and numeracy skills</li>
+                        <li>Social and emotional learning</li>
+                        <li>Play-based learning approach</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Elementary School</h4>
+                    <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+                        <li>Strong foundation in core academic subjects</li>
+                        <li>Character development and values education</li>
+                        <li>Engaging and interactive learning activities</li>
+                        <li>Development of critical thinking skills</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Junior High School</h4>
+                    <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+                        <li>In-depth study of core academic subjects</li>
+                        <li>Skill development for problem-solving</li>
+                        <li>Exploration of various interests and talents</li>
+                        <li>Preparation for advanced studies</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Senior High School</h4>
+                    <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+                        <li>Specialized academic tracks (STEM, HUMSS, ABM, GAS)</li>
+                        <li>Intensive preparation for college and careers</li>
+                        <li>Leadership and community service opportunities</li>
+                        <li>Research and innovation projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs and Curriculum Section -->
+    <section id="programs-curriculum" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12">Programs & Curriculum</h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-3xl font-semibold text-accent mb-6">Academic Subjects</h4>
+                    <ul class="list-disc list-inside text-lg leading-relaxed space-y-2 ml-4">
+                        <li>Mathematics (Algebra, Geometry, Calculus)</li>
+                        <li>Sciences (Biology, Chemistry, Physics, Earth Science)</li>
+                        <li>English Language and Literature</li>
+                        <li>Filipino Language and Literature</li>
+                        <li>Social Studies (History, Geography, Economics)</li>
+                        <li>Arts and Music Education</li>
+                        <li>Physical Education and Health</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-3xl font-semibold text-accent mb-6">Specialized Programs</h4>
+                    <ul class="list-disc list-inside text-lg leading-relaxed space-y-2 ml-4">
+                        <li><strong class="text-accent">STEM Education:</strong> Fostering innovation in Science, Technology, Engineering, and Mathematics.</li>
+                        <li><strong class="text-accent">Humanities & Social Sciences:</strong> Developing critical thinking and understanding of human society.</li>
+                        <li><strong class="text-accent">Leadership & Values Education:</strong> Nurturing ethical leaders with strong moral foundations.</li>
+                        <li><strong class="text-accent">Co-curricular Programs:</strong> Enhancing learning through clubs, competitions, and special projects.</li>
+                        <li><strong class="text-accent">Digital Literacy:</strong> Equipping students with essential 21st-century technology skills.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Opportunities Section (using <details> for expandables) -->
+    <section id="student-opportunities" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-primary text-center mb-12">Student Opportunities</h3>
+            <div class="space-y-6 max-w-3xl mx-auto">
+                <details class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <summary class="flex justify-between items-center cursor-pointer text-2xl font-semibold text-primary group-hover:text-accent transition-colors duration-200">
+                        Academic Competitions
+                        <svg class="w-6 h-6 transform group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-lg leading-relaxed border-t pt-4 border-secondary">
+                        Students are encouraged to participate in various academic competitions, including Math Olympiads, Science Fairs, Debate Tournaments, and Essay Writing Contests, to challenge themselves and showcase their talents.
+                    </div>
+                </details>
+                <details class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <summary class="flex justify-between items-center cursor-pointer text-2xl font-semibold text-primary group-hover:text-accent transition-colors duration-200">
+                        Student Leadership Programs
+                        <svg class="w-6 h-6 transform group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-lg leading-relaxed border-t pt-4 border-secondary">
+                        Our leadership programs empower students to develop essential leadership skills through student councils, peer mentoring, and various school-wide initiatives, fostering responsibility and initiative.
+                    </div>
+                </details>
+                <details class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <summary class="flex justify-between items-center cursor-pointer text-2xl font-semibold text-primary group-hover:text-accent transition-colors duration-200">
+                        Clubs and Organizations
+                        <svg class="w-6 h-6 transform group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-lg leading-relaxed border-t pt-4 border-secondary">
+                        A wide array of clubs and organizations caters to diverse interests, including robotics, creative writing, environmental advocacy, performing arts, and sports, promoting teamwork and personal growth.
+                    </div>
+                </details>
+                <details class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <summary class="flex justify-between items-center cursor-pointer text-2xl font-semibold text-primary group-hover:text-accent transition-colors duration-200">
+                        Community Involvement
+                        <svg class="w-6 h-6 transform group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-lg leading-relaxed border-t pt-4 border-secondary">
+                        Students actively participate in community service projects, outreach programs, and environmental initiatives, instilling a sense of social responsibility and civic engagement.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-primary text-center mb-12">Admissions</h3>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex border-b border-secondary mb-8">
+                    <button class="tab-button py-3 px-6 text-xl font-semibold text-primary border-b-4 border-transparent hover:border-accent transition-colors duration-200" data-tab="requirements" role="tab" aria-controls="requirements-content" aria-selected="true">Requirements</button>
+                    <button class="tab-button py-3 px-6 text-xl font-semibold text-primary border-b-4 border-transparent hover:border-accent transition-colors duration-200" data-tab="procedures" role="tab" aria-controls="procedures-content" aria-selected="false">Procedures</button>
+                    <button class="tab-button py-3 px-6 text-xl font-semibold text-primary border-b-4 border-transparent hover:border-accent transition-colors duration-200" data-tab="contact-assistance" role="tab" aria-controls="contact-assistance-content" aria-selected="false">Contact Assistance</button>
+                </div>
+
+                <div id="requirements-content" class="tab-content p-6 bg-secondary rounded-lg shadow-md" role="tabpanel" aria-labelledby="requirements">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Admission Requirements</h4>
+                    <ul class="list-disc list-inside text-lg leading-relaxed space-y-2 ml-4">
+                        <li>Completed Application Form</li>
+                        <li>Original Report Card (Form 138)</li>
+                        <li>Good Moral Character Certificate</li>
+                        <li>Birth Certificate (PSA Authenticated)</li>
+                        <li>Two (2) 2x2 colored ID pictures</li>
+                        <li>Entrance Examination Fee</li>
+                    </ul>
+                </div>
+                <div id="procedures-content" class="tab-content hidden p-6 bg-secondary rounded-lg shadow-md" role="tabpanel" aria-labelledby="procedures">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Application Procedures</h4>
+                    <ol class="list-decimal list-inside text-lg leading-relaxed space-y-2 ml-4">
+                        <li>Submit complete requirements to the Admissions Office.</li>
+                        <li>Pay the Entrance Examination Fee at the Cashier.</li>
+                        <li>Take the Entrance Examination on the scheduled date.</li>
+                        <li>Attend the interview with the Admissions Committee.</li>
+                        <li>Receive the Admission Slip upon successful evaluation.</li>
+                    </ol>
+                </div>
+                <div id="contact-assistance-content" class="tab-content hidden p-6 bg-secondary rounded-lg shadow-md" role="tabpanel" aria-labelledby="contact-assistance">
+                    <h4 class="text-2xl font-semibold text-primary mb-4">Need Assistance?</h4>
+                    <p class="text-lg leading-relaxed mb-4">Our Admissions team is ready to assist you with any questions regarding the application process. Please reach out to us:</p>
+                    <ul class="text-lg leading-relaxed space-y-2 ml-4">
+                        <li><strong>Email:</strong> admissions@neu.edu.ph</li>
+                        <li><strong>Phone:</strong> (02) 8920-NEUK12 (638512)</li>
+                        <li><strong>Office Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-12">Contact Us</h3>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div>
+                    <h4 class="text-3xl font-semibold text-accent mb-6">Send us a Message</h4>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-lg font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 rounded-md bg-white text-primary border border-transparent focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all duration-200" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-lg font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 rounded-md bg-white text-primary border border-transparent focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all duration-200" placeholder="your.email@example.com" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-lg font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" class="w-full p-3 rounded-md bg-white text-primary border border-transparent focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all duration-200" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="bg-accent text-primary hover:bg-yellow-400 py-3 px-8 rounded-full text-lg font-bold transition-all duration-300 shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <h4 class="text-3xl font-semibold text-accent mb-6">Our Details</h4>
+                    <div class="space-y-6 text-lg leading-relaxed">
+                        <p>
+                            <strong>Address:</strong><br>
+                            New Era University K–12 Program<br>
+                            No. 9 Central Avenue, New Era, Quezon City<br>
+                            1107 Metro Manila, Philippines
+                        </p>
+                        <p>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:k12admissions@neu.edu.ph" class="text-accent hover:underline">k12admissions@neu.edu.ph</a>
+                        </p>
+                        <p>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:+6328920638512" class="text-accent hover:underline">(02) 8920-NEUK12 (638512)</a>
+                        </p>
+                        <p>
+                            <strong>Office Hours:</strong><br>
+                            Monday - Friday: 8:00 AM - 5:00 PM
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <p class="text-xl font-semibold mb-2">"Empowering students through quality education and leadership development."</p>
+                <div class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-lg">
+                    <a href="#hero" class="hover:text-accent transition-colors duration-200">Home</a>
+                    <a href="#about" class="hover:text-accent transition-colors duration-200">About</a>
+                    <a href="#academic-levels" class="hover:text-accent transition-colors duration-200">Levels</a>
+                    <a href="#programs-curriculum" class="hover:text-accent transition-colors duration-200">Programs</a>
+                    <a href="#admissions" class="hover:text-accent transition-colors duration-200">Admissions</a>
+                    <a href="#contact" class="hover:text-accent transition-colors duration-200">Contact</a>
+                </div>
+            </div>
+            <p class="text-sm">&copy; 2023 New Era University K–12 Program. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for all internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Adjust scroll position for fixed header
+                        const headerOffset = document.getElementById('navbar').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            // Sticky Navigation Bar
+            const navbar = document.getElementById('navbar');
+            const heroSection = document.getElementById('hero');
+            
+            function toggleStickyNav() {
+                // Make navbar sticky when scrolled past the hero section
+                if (window.scrollY > heroSection.offsetHeight - navbar.offsetHeight) {
+                    navbar.classList.add('sticky-nav');
+                } else {
+                    navbar.classList.remove('sticky-nav');
+                }
+            }
+
+            window.addEventListener('scroll', toggleStickyNav);
+            window.addEventListener('resize', toggleStickyNav); // Re-evaluate on resize
+            toggleStickyNav(); // Initial check on load
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Admissions Tabs functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            function activateTab(tabId) {
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                    content.setAttribute('aria-hidden', 'true');
+                });
+                tabButtons.forEach(button => {
+                    button.classList.remove('border-accent', 'border-b-4');
+                    button.classList.add('border-transparent');
+                    button.setAttribute('aria-selected', 'false');
+                });
+
+                const targetContent = document.getElementById(`${tabId}-content`);
+                const targetButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+                
+                if (targetContent && targetButton) {
+                    targetContent.classList.remove('hidden');
+                    targetContent.setAttribute('aria-hidden', 'false');
+                    targetButton.classList.add('border-accent', 'border-b-4');
+                    targetButton.classList.remove('border-transparent');
+                    targetButton.setAttribute('aria-selected', 'true');
+                }
+            }
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    activateTab(button.dataset.tab);
+                });
+            });
+
+            // Activate the first tab by default
+            if (tabButtons.length > 0) {
+                activateTab(tabButtons[0].dataset.tab);
+            }
+
+            // Contact Form Submission (placeholder)
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you shortly.');
+                    this.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
